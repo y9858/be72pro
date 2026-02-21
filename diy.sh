@@ -18,5 +18,8 @@ sed -i 's/CPU 性能优化调节/CPU 性能调节/g' feeds/luci/applications/luc
 # 生成编译时间
 date "+%Y-%m-%d %H:%M:%S %z" >> package/base-files/files/etc/build_date
 
+# 添加 rtl8372n-driver
+git clone --depth 1 https://github.com/RuijieNetworksCommunity/openwrt-rtl8372n-driver package/rtl8372n-driver
+
 rm -rf package/network/utils/ebtables/Makefile
 curl -o package/network/utils/ebtables/Makefile https://raw.githubusercontent.com/openwrt/openwrt/refs/heads/main/package/network/utils/ebtables/Makefile
