@@ -21,5 +21,9 @@ date "+%Y-%m-%d %H:%M:%S %z" >> package/base-files/files/etc/build_date
 # 添加 rtl8372n-driver
 git clone --depth 1 https://github.com/RuijieNetworksCommunity/openwrt-rtl8372n-driver package/rtl8372n-driver
 
+# 修改首页显示
+rm -rf feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/40_dhcp.js
+curl -o feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/40_dhcp.js https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/40_dhcp.js
+
 rm -rf package/network/utils/ebtables/Makefile
 curl -o package/network/utils/ebtables/Makefile https://raw.githubusercontent.com/openwrt/openwrt/refs/heads/main/package/network/utils/ebtables/Makefile
