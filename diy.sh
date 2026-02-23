@@ -25,5 +25,8 @@ git clone --depth 1 https://github.com/RuijieNetworksCommunity/openwrt-rtl8372n-
 rm -rf feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/40_dhcp.js
 curl -o feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/40_dhcp.js https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/40_dhcp.js
 
+rm -rf feeds/luci/modules/luci-base/po/zh_Hans/base.po
+curl -o feeds/luci/modules/luci-base/po/zh_Hans/base.po https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/base.po
+
 rm -rf package/network/utils/ebtables/Makefile
 curl -o package/network/utils/ebtables/Makefile https://raw.githubusercontent.com/openwrt/openwrt/refs/heads/main/package/network/utils/ebtables/Makefile
