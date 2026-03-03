@@ -19,7 +19,19 @@ sed -i 's/CPU 性能优化调节/CPU 性能调节/g' feeds/luci/applications/luc
 date "+%Y-%m-%d %H:%M:%S %z" >> package/base-files/files/etc/build_date
 
 # 添加 rtl8372n-driver
-git clone --depth 1 https://github.com/RuijieNetworksCommunity/openwrt-rtl8372n-driver package/rtl8372n-driver
+git clone --depth 1 https://github.com/RuijieNetworksCommunity/rtl837x-gsw-driver package/rtl837x-gsw-driver
+
+# 添加非官方软件包
+rm -rf feeds/packages/net/speedtest-cli
+git clone --depth 1 https://github.com/sbwml/openwrt_pkgs.git package/new/custom
+mv package/new/custom/luci-app-netspeedtest  package/new
+mv package/new/custom/speedtest-cli package/new
+rm -rf package/new/custom
+
+git clone --depth 1 https://github.com/gdy666/luci-app-lucky package/luci-app-lucky
+git clone --depth 1 https://github.com/sbwml/luci-app-openlist2 package/luci-app-openlist2
+git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-nikki package/OpenWrt-nikki
+git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-momo package/OpenWrt-momo
 
 # 修改首页显示
 rm -rf feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/40_dhcp.js
