@@ -30,6 +30,7 @@ rm -rf package/new/custom
 
 git clone --depth 1 https://github.com/gdy666/luci-app-lucky package/luci-app-lucky
 git clone --depth 1 https://github.com/sbwml/luci-app-openlist2 package/luci-app-openlist2
+git clone --depth 1 https://github.com/y9858/luci-app-alist package/luci-app-alist
 git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-nikki package/OpenWrt-nikki
 git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-momo package/OpenWrt-momo
 
