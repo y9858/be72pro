@@ -43,3 +43,6 @@ curl -o feeds/luci/modules/luci-base/po/zh_Hans/base.po https://raw.githubuserco
 
 rm -rf package/network/utils/ebtables/Makefile
 curl -o package/network/utils/ebtables/Makefile https://raw.githubusercontent.com/openwrt/openwrt/refs/heads/main/package/network/utils/ebtables/Makefile
+
+rm -rf package/emortal/autocore/files/generic/cpuinfo
+curl -o package/emortal/autocore/files/generic/cpuinfo https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/cpuinfo
