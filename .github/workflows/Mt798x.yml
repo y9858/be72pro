@@ -93,6 +93,7 @@ jobs:
     - name: 更新安装feeds
       run: |
         cd $OPENWRT_PATH
+        sed -i '6d' feeds.conf.default
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
