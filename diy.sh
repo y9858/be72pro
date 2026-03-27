@@ -50,3 +50,9 @@ curl -o package/network/utils/ebtables/Makefile https://raw.githubusercontent.co
 
 rm -rf package/emortal/autocore/files/generic/cpuinfo
 curl -o package/emortal/autocore/files/generic/cpuinfo https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/cpuinfo
+
+rm -rf feeds/packages/lang/golang
+git clone --depth 1 https://github.com/y9858/golang feeds/packages/lang/golang
+
+rm -rf feeds/packages/lang/rust
+git clone --depth 1 https://github.com/y9858/rust feeds/packages/lang/rust
