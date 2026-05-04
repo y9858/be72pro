@@ -20,14 +20,9 @@ date "+%Y-%m-%d %H:%M:%S %z" >> package/base-files/files/etc/build_date
 
 # 添加非官方软件包
 rm -rf feeds/packages/net/speedtest-cli
-rm -rf feeds/luci/applications/luci-app-wifihistory
-rm -rf feeds/luci/themes/luci-theme-material
 git clone --depth 1 https://github.com/sbwml/openwrt_pkgs.git package/new/custom
-git clone --depth 1 https://github.com/immortalwrt/luci.git package/new/custom/luci
 mv package/new/custom/luci-app-netspeedtest  package/new
 mv package/new/custom/speedtest-cli package/new
-mv package/new/custom/luci/applications/luci-app-wifihistory package/new
-mv package/new/custom/luci/themes/luci-theme-material package/new
 rm -rf package/new/custom
 
 git clone --depth 1 https://github.com/gdy666/luci-app-lucky package/luci-app-lucky
