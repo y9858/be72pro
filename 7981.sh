@@ -18,14 +18,16 @@ sed -i 's/CPU 性能优化调节/CPU 性能调节/g' feeds/luci/applications/luc
 # 生成编译时间
 date "+%Y-%m-%d %H:%M:%S %z" >> package/base-files/files/etc/build_date
 
-# 添加 rtl8372n-driver
-git clone --depth 1 https://github.com/RuijieNetworksCommunity/rtl837x-gsw-driver package/rtl837x-gsw-driver
-
 # 添加非官方软件包
 rm -rf feeds/packages/net/speedtest-cli
+rm -rf feeds/luci/applications/luci-app-wifihistory
+rm -rf feeds/luci/themes/luci-theme-material
 git clone --depth 1 https://github.com/sbwml/openwrt_pkgs.git package/new/custom
+git clone --depth 1 https://github.com/immortalwrt/luci.git package/new/custom/luci
 mv package/new/custom/luci-app-netspeedtest  package/new
 mv package/new/custom/speedtest-cli package/new
+mv package/new/custom/luci/applications/luci-app-wifihistory package/new
+mv package/new/custom/luci/themes/luci-theme-material package/new
 rm -rf package/new/custom
 
 git clone --depth 1 https://github.com/gdy666/luci-app-lucky package/luci-app-lucky
@@ -35,10 +37,6 @@ git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-nikki package/Open
 rm -rf package/OpenWrt-nikki/luci-app-nikki/po/zh_Hans/nikki.po
 curl -o package/OpenWrt-nikki/luci-app-nikki/po/zh_Hans/nikki.po https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/nikki.po
 git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-momo package/OpenWrt-momo
-rm -rf feeds/packages/net/{xray-core,v2ray-geodata,sing-box,chinadns-ng,dns2socks,hysteria,ipt2socks,microsocks,naiveproxy,shadowsocks-libev,shadowsocks-rust,shadowsocksr-libev,simple-obfs,tcping,trojan-plus,tuic-client,v2ray-plugin,xray-plugin,geoview,shadow-tls}
-rm -rf feeds/luci/applications/luci-app-passwall
-git clone --depth 1 https://github.com/Openwrt-Passwall/openwrt-passwall-packages package/passwall-packages
-git clone --depth 1 https://github.com/y9858/openwrt-passwall2 package/openwrt-passwall2
 
 # 修改首页显示
 rm -rf feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/40_dhcp.js
@@ -46,9 +44,6 @@ curl -o feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/sta
 
 rm -rf feeds/luci/modules/luci-base/po/zh_Hans/base.po
 curl -o feeds/luci/modules/luci-base/po/zh_Hans/base.po https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/base.po
-
-rm -rf package/network/utils/ebtables/Makefile
-curl -o package/network/utils/ebtables/Makefile https://raw.githubusercontent.com/openwrt/openwrt/refs/heads/main/package/network/utils/ebtables/Makefile
 
 rm -rf package/emortal/autocore/files/generic/cpuinfo
 curl -o package/emortal/autocore/files/generic/cpuinfo https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/cpuinfo
