@@ -30,15 +30,9 @@ rm -rf package/new/custom
 
 git clone --depth 1 https://github.com/gdy666/luci-app-lucky package/luci-app-lucky
 git clone --depth 1 https://github.com/sbwml/luci-app-openlist2 package/luci-app-openlist2
-git clone --depth 1 https://github.com/y9858/luci-app-alist package/luci-app-alist
 git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-nikki package/OpenWrt-nikki
 rm -rf package/OpenWrt-nikki/luci-app-nikki/po/zh_Hans/nikki.po
 curl -o package/OpenWrt-nikki/luci-app-nikki/po/zh_Hans/nikki.po https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/nikki.po
-git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-momo package/OpenWrt-momo
-rm -rf feeds/packages/net/{xray-core,v2ray-geodata,sing-box,chinadns-ng,dns2socks,hysteria,ipt2socks,microsocks,naiveproxy,shadowsocks-libev,shadowsocks-rust,shadowsocksr-libev,simple-obfs,tcping,trojan-plus,tuic-client,v2ray-plugin,xray-plugin,geoview,shadow-tls}
-rm -rf feeds/luci/applications/luci-app-passwall
-git clone --depth 1 https://github.com/Openwrt-Passwall/openwrt-passwall-packages package/passwall-packages
-git clone --depth 1 https://github.com/y9858/openwrt-passwall2 package/openwrt-passwall2
 
 # 修改首页显示
 rm -rf feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/40_dhcp.js
@@ -47,9 +41,6 @@ curl -o feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/sta
 rm -rf feeds/luci/modules/luci-base/po/zh_Hans/base.po
 curl -o feeds/luci/modules/luci-base/po/zh_Hans/base.po https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/base.po
 
-rm -rf package/network/utils/ebtables/Makefile
-curl -o package/network/utils/ebtables/Makefile https://raw.githubusercontent.com/openwrt/openwrt/refs/heads/main/package/network/utils/ebtables/Makefile
-
 rm -rf package/emortal/autocore/files/generic/cpuinfo
 curl -o package/emortal/autocore/files/generic/cpuinfo https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/cpuinfo
 
@@ -57,4 +48,7 @@ rm -rf feeds/packages/lang/golang
 git clone --depth 1 https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
 
 rm -rf feeds/packages/lang/rust
-git clone --depth 1 https://github.com/y9858/rust feeds/packages/lang/rust
+git clone --depth 1 https://github.com/sbwml/packages_lang_rust feeds/packages/lang/rust
+
+rm -rf feeds/luci/themes/luci-theme-material
+git clone --depth 1 https://github.com/y9858/luci-theme-material feeds/luci/themes/luci-theme-material
