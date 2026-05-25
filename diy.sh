@@ -1,7 +1,11 @@
 #!/bin/bash
 
 # 修改默认主题
-sed -i 's/luci-theme-bootstrap/luci-theme-material/g' ./feeds/luci/collections/luci-light/Makefile
+rm -rf feeds/luci/themes/luci-theme-argon
+rm -rf feeds/luci/applications/luci-app-argon-config
+git clone --depth 1 https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci-light/Makefile
 
 # 修改默认 IP
 sed -i 's/192.168.110.1/192.168.2.1/g' package/base-files/files/bin/config_generate
