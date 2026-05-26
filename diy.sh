@@ -1,11 +1,9 @@
 #!/bin/bash
 
 # 修改默认主题
-rm -rf feeds/luci/themes/luci-theme-argon
-rm -rf feeds/luci/applications/luci-app-argon-config
-git clone --depth 1 https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
-git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci-light/Makefile
+rm -rf feeds/luci/themes/luci-theme-material
+git clone --depth 1 https://github.com/y9858/luci-theme-material feeds/luci/themes/luci-theme-material
+sed -i 's/luci-theme-bootstrap/luci-theme-material/g' ./feeds/luci/collections/luci-light/Makefile
 
 # 修改默认 IP
 sed -i 's/192.168.110.1/192.168.2.1/g' package/base-files/files/bin/config_generate
@@ -22,9 +20,6 @@ sed -i 's/CPU 性能优化调节/CPU 性能调节/g' feeds/luci/applications/luc
 # 生成编译时间
 date "+%Y-%m-%d %H:%M:%S %z" >> package/base-files/files/etc/build_date
 
-# 添加 rtl8372n-driver
-git clone --depth 1 https://github.com/RuijieNetworksCommunity/rtl837x-gsw-driver package/rtl837x-gsw-driver
-
 # 添加非官方软件包
 rm -rf feeds/packages/net/speedtest-cli
 git clone --depth 1 https://github.com/sbwml/openwrt_pkgs.git package/new/custom
@@ -37,6 +32,8 @@ git clone --depth 1 https://github.com/sbwml/luci-app-openlist2 package/luci-app
 git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-nikki package/OpenWrt-nikki
 rm -rf package/OpenWrt-nikki/luci-app-nikki/po/zh_Hans/nikki.po
 curl -o package/OpenWrt-nikki/luci-app-nikki/po/zh_Hans/nikki.po https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/nikki.po
+git clone --depth 1 https://github.com/migee99/luci-app-clientstatus package/luci-app-clientstatus
+sed -i 's/客户端管理/终端管理/g' package/luci-app-clientstatus/luci-app-clientstatus/po/zh_Hans/clientstatus.po
 
 # 修改首页显示
 rm -rf feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/40_dhcp.js
@@ -53,6 +50,3 @@ git clone --depth 1 https://github.com/sbwml/packages_lang_golang feeds/packages
 
 rm -rf feeds/packages/lang/rust
 git clone --depth 1 https://github.com/sbwml/packages_lang_rust feeds/packages/lang/rust
-
-rm -rf feeds/luci/themes/luci-theme-material
-git clone --depth 1 https://github.com/y9858/luci-theme-material feeds/luci/themes/luci-theme-material
