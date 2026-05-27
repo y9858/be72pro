@@ -28,8 +28,6 @@ rm -rf package/new/custom
 git clone --depth 1 https://github.com/gdy666/luci-app-lucky package/luci-app-lucky
 git clone --depth 1 https://github.com/sbwml/luci-app-openlist2 package/luci-app-openlist2
 git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-nikki package/OpenWrt-nikki
-rm -rf package/OpenWrt-nikki/luci-app-nikki/po/zh_Hans/nikki.po
-curl -o package/OpenWrt-nikki/luci-app-nikki/po/zh_Hans/nikki.po https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/nikki.po
 git clone --depth 1 https://github.com/migee99/luci-app-clientstatus package/luci-app-clientstatus
 sed -i 's/客户端管理/终端管理/g' package/luci-app-clientstatus/luci-app-clientstatus/po/zh_Hans/clientstatus.po
 sed -i 's/设备总数/终端/g' package/luci-app-clientstatus/luci-app-clientstatus/po/zh_Hans/clientstatus.po
