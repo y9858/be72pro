@@ -1,9 +1,7 @@
 #!/bin/bash
 
 # 修改默认主题
-rm -rf feeds/luci/themes/luci-theme-material
-git clone --depth 1 https://github.com/y9858/luci-theme-material feeds/luci/themes/luci-theme-material
-sed -i 's/luci-theme-bootstrap/luci-theme-material/g' ./feeds/luci/collections/luci-light/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci-light/Makefile
 
 # 修改默认 IP
 sed -i 's/192.168.110.1/192.168.2.1/g' package/base-files/files/bin/config_generate
@@ -34,6 +32,9 @@ rm -rf package/OpenWrt-nikki/luci-app-nikki/po/zh_Hans/nikki.po
 curl -o package/OpenWrt-nikki/luci-app-nikki/po/zh_Hans/nikki.po https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/nikki.po
 git clone --depth 1 https://github.com/migee99/luci-app-clientstatus package/luci-app-clientstatus
 sed -i 's/客户端管理/终端管理/g' package/luci-app-clientstatus/luci-app-clientstatus/po/zh_Hans/clientstatus.po
+sed -i 's/设备总数/终端/g' package/luci-app-clientstatus/luci-app-clientstatus/po/zh_Hans/clientstatus.po
+sed -i 's/允许联网/允许/g' package/luci-app-clientstatus/luci-app-clientstatus/po/zh_Hans/clientstatus.po
+sed -i 's/禁止联网/禁止/g' package/luci-app-clientstatus/luci-app-clientstatus/po/zh_Hans/clientstatus.po
 
 # 修改首页显示
 rm -rf feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/40_dhcp.js
