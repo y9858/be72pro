@@ -12,7 +12,6 @@ env:
   REPO_BRANCH: mt798x-mt799x-mtwifi_be72pro_be68u
   CONFIG_FILE: mt798x.config
   DIY_SCRIPT: diy.sh
-  CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: false
   UPLOAD_BIN_DIR: true
   FIRMWARE_RELEASE: true
@@ -140,7 +139,7 @@ jobs:
         cp $OPENWRT_PATH/.config build.config
         mv -f $OPENWRT_PATH/bin/packages/*/*/*.ipk packages
         tar -zcf Packages.tar.gz packages
-        rm -rf packages feeds.buildinfo version.buildinfo
+        rm -rf packages *bl2.bin
         echo "FIRMWARE_PATH=$PWD" >> $GITHUB_ENV
 
     - name: 生成tag
