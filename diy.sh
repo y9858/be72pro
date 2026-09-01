@@ -49,3 +49,8 @@ git clone --depth 1 https://github.com/sbwml/packages_lang_golang feeds/packages
 
 rm -rf feeds/packages/lang/rust
 git clone --depth 1 https://github.com/sbwml/packages_lang_rust feeds/packages/lang/rust
+
+# 临时
+rm -rf package/mtk/applications/luci-app-turboacc-mtk/po/zh_Hans/turboacc.po
+curl -o package/mtk/applications/luci-app-turboacc-mtk/po/zh_Hans/turboacc.po https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/turboacc.po
+git clone --depth 1 https://github.com/RuijieNetworksCommunity/rtl837x-dsa-driver package/rtl837x-dsa-driver
