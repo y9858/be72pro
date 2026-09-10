@@ -56,3 +56,4 @@ curl -o package/mtk/applications/luci-app-turboacc-mtk/po/zh_Hans/turboacc.po ht
 git clone --depth 1 https://github.com/RuijieNetworksCommunity/rtl837x-dsa-driver package/rtl837x-dsa-driver
 sed -i 's/2.43.0/2.63.23/g' feeds/packages/utils/filebrowser/Makefile
 sed -i 's/9c3acee7567986ceef331e3eea0236b4dd9a41bf3874449fbb9bdc22c00a0aab/18020983f6a4e43d679738738c3f95c52a333a282144046ec152491f2341a152/g' feeds/packages/utils/filebrowser/Makefile
+rm -rf feeds/packages/utils/filebrowser/patches
