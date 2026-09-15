@@ -29,7 +29,7 @@ mv package/new/custom/luci-app-netspeedtest  package/new
 mv package/new/custom/speedtest-cli package/new
 rm -rf package/new/custom
 
-git clone --depth 1 https://github.com/gdy666/luci-app-lucky package/luci-app-lucky
+git clone --depth 1 https://github.com/y9858/luci-app-lucky package/luci-app-lucky
 git clone --depth 1 https://github.com/sbwml/luci-app-openlist2 package/luci-app-openlist2
 git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-nikki package/OpenWrt-nikki
 git clone --depth 1 https://github.com/y9858/luci-app-clientstatus package/luci-app-clientstatus
@@ -54,10 +54,3 @@ git clone --depth 1 https://github.com/sbwml/packages_lang_rust feeds/packages/l
 rm -rf package/mtk/applications/luci-app-turboacc-mtk/po/zh_Hans/turboacc.po
 curl -o package/mtk/applications/luci-app-turboacc-mtk/po/zh_Hans/turboacc.po https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/turboacc.po
 git clone --depth 1 https://github.com/RuijieNetworksCommunity/rtl837x-dsa-driver package/rtl837x-dsa-driver
-sed -i 's/2.43.0/2.63.23/g' feeds/packages/utils/filebrowser/Makefile
-sed -i 's/9c3acee7567986ceef331e3eea0236b4dd9a41bf3874449fbb9bdc22c00a0aab/18020983f6a4e43d679738738c3f95c52a333a282144046ec152491f2341a152/g' feeds/packages/utils/filebrowser/Makefile
-rm -rf feeds/packages/utils/filebrowser/patches
-rm -rf feeds/packages/net/dufs/files/dufs.init
-curl -o feeds/packages/net/dufs/files/dufs.init https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/dufs
-rm -rf feeds/luci/applications/luci-app-dufs/htdocs/luci-static/resources/view/dufs.js
-curl -o feeds/luci/applications/luci-app-dufs/htdocs/luci-static/resources/view/dufs.js https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/dufs.js
