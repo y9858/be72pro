@@ -54,3 +54,7 @@ git clone --depth 1 https://github.com/sbwml/packages_lang_rust feeds/packages/l
 rm -rf package/mtk/applications/luci-app-turboacc-mtk/po/zh_Hans/turboacc.po
 curl -o package/mtk/applications/luci-app-turboacc-mtk/po/zh_Hans/turboacc.po https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/turboacc.po
 git clone --depth 1 https://github.com/RuijieNetworksCommunity/rtl837x-dsa-driver package/rtl837x-dsa-driver
+rm -rf feeds/packages/net/dufs/files/dufs.init
+curl -o feeds/packages/net/dufs/files/dufs.init https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/dufs
+rm -rf feeds/luci/applications/luci-app-dufs/htdocs/luci-static/resources/view/dufs.js
+curl -o feeds/luci/applications/luci-app-dufs/htdocs/luci-static/resources/view/dufs.js https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/dufs.js
