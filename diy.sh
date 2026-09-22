@@ -58,3 +58,6 @@ rm -rf feeds/packages/net/dufs/files/dufs.init
 curl -o feeds/packages/net/dufs/files/dufs.init https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/dufs
 rm -rf feeds/luci/applications/luci-app-dufs/htdocs/luci-static/resources/view/dufs.js
 curl -o feeds/luci/applications/luci-app-dufs/htdocs/luci-static/resources/view/dufs.js https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/dufs.js
+rm -rf feeds/packages/net/adguardhome
+rm -rf feeds/luci/applications/luci-app-adguardhome
+git clone --depth 1 https://github.com/w9315273/luci-app-adguardhome package/luci-app-adguardhome
