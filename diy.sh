@@ -23,12 +23,6 @@ sed -i 's/CPU 性能优化调节/CPU 性能调节/g' feeds/luci/applications/luc
 date "+%Y-%m-%d %H:%M:%S %z" >> package/base-files/files/etc/build_date
 
 # 添加非官方软件包
-rm -rf feeds/packages/net/speedtest-cli
-git clone --depth 1 https://github.com/sbwml/openwrt_pkgs.git package/new/custom
-mv package/new/custom/luci-app-netspeedtest  package/new
-mv package/new/custom/speedtest-cli package/new
-rm -rf package/new/custom
-
 git clone --depth 1 https://github.com/y9858/luci-app-lucky package/luci-app-lucky
 git clone --depth 1 https://github.com/sbwml/luci-app-openlist2 package/luci-app-openlist2
 git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-nikki package/OpenWrt-nikki
